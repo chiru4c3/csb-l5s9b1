@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>
+      s6 constructors js
+    </h1>
+    <script>
+      function Circle(radius, x, y) {
+        this.radius = radius;
+        this.location = {
+          x,
+          y
+        };
+        this.draw = function () {
+          console.log(this.location.x, this.location.y);
+        };
+        this.move = function (nextX, nextY) {
+          this.location.x = nextX;
+          this.location.y = nextY;
+        };
+      }
+      let c1 = new Circle(5, 0, 0);
+      //console.log(c1);
+      function moveByOnestep(o) {
+        o.move(c1.location.x + 1, c1.location.y + 1);
+        o.draw();
+      }
+      for (let i = 0; i < 10; i++) {
+        moveByOnestep(c1);
+      }
+    </script>
+  </body>
+</html>
